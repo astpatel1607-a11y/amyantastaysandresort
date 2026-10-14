@@ -1,0 +1,122 @@
+{
+  "name": "SiteSetting",
+  "type": "object",
+  "properties": {
+    "brandName": {
+      "type": "string",
+      "default": "Amyanta Stays & Resorts",
+      "title": "Brand Name"
+    },
+    "tagline": {
+      "type": "string",
+      "default": "Stay. Explore. Experience.",
+      "title": "Tagline"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "maxLength": 1000
+    },
+    "whatsappNumber": {
+      "type": "string",
+      "title": "WhatsApp Number (with country code, digits only)"
+    },
+    "phoneNumbers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Phone Numbers"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email",
+      "format": "email"
+    },
+    "instagram": {
+      "type": "string",
+      "title": "Instagram URL",
+      "format": "url"
+    },
+    "facebook": {
+      "type": "string",
+      "title": "Facebook URL",
+      "format": "url"
+    },
+    "youtube": {
+      "type": "string",
+      "title": "YouTube URL",
+      "format": "url"
+    },
+    "address": {
+      "type": "string",
+      "title": "Address"
+    },
+    "mapUrl": {
+      "type": "string",
+      "title": "Google Maps Embed URL",
+      "format": "url"
+    },
+    "heroImage": {
+      "type": "string",
+      "title": "Home Hero Image URL",
+      "format": "url"
+    },
+    "aboutStory": {
+      "type": "string",
+      "title": "About / Company Story"
+    },
+    "vision": {
+      "type": "string",
+      "title": "Vision"
+    },
+    "mission": {
+      "type": "string",
+      "title": "Mission"
+    },
+    "founderName": {
+      "type": "string",
+      "title": "Founder Name"
+    },
+    "founderImage": {
+      "type": "string",
+      "title": "Founder Image URL",
+      "format": "url"
+    },
+    "founderStory": {
+      "type": "string",
+      "title": "Founder Story"
+    },
+    "notificationEmail": {
+      "type": "string",
+      "title": "Email to notify on new enquiry",
+      "format": "email"
+    },
+    "googleSheetUrl": {
+      "type": "string",
+      "title": "Google Sheet URL (for enquiry tracking)",
+      "format": "url"
+    }
+  },
+  "required": [
+    "brandName"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

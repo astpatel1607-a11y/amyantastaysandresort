@@ -1,0 +1,64 @@
+{
+  "name": "GalleryItem",
+  "type": "object",
+  "properties": {
+    "image": {
+      "type": "string",
+      "title": "Image URL",
+      "format": "url"
+    },
+    "caption": {
+      "type": "string",
+      "title": "Caption"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "maxLength": 1000
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Properties",
+        "Rooms",
+        "Food",
+        "Nature",
+        "Wildlife",
+        "Safari",
+        "Experiences",
+        "Destinations"
+      ],
+      "title": "Category"
+    },
+    "destinationId": {
+      "type": "string",
+      "title": "Destination ID (optional)"
+    },
+    "propertyId": {
+      "type": "string",
+      "title": "Property ID (optional)"
+    }
+  },
+  "required": [
+    "image",
+    "category"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

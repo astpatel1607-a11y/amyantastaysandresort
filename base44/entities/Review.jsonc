@@ -1,0 +1,77 @@
+{
+  "name": "Review",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Guest Name"
+    },
+    "location": {
+      "type": "string",
+      "title": "Location / Stay"
+    },
+    "quote": {
+      "type": "string",
+      "title": "Review"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "maxLength": 1000
+    },
+    "photo": {
+      "type": "string",
+      "title": "Guest Photo URL",
+      "format": "url"
+    },
+    "rating": {
+      "type": "number",
+      "title": "Rating (1-5)",
+      "default": 5,
+      "minimum": 1,
+      "maximum": 5
+    },
+    "propertyId": {
+      "type": "string",
+      "title": "Property ID (optional)",
+      "description": "Link this review to a specific property"
+    },
+    "propertyName": {
+      "type": "string",
+      "title": "Property Name (cached)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "pending",
+        "hidden"
+      ],
+      "default": "pending",
+      "title": "Status"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "title": "Featured"
+    }
+  },
+  "required": [
+    "name",
+    "quote"
+  ],
+  "rls": {
+    "create": null,
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

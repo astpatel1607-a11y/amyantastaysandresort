@@ -1,0 +1,131 @@
+{
+  "name": "Property",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Property Name"
+    },
+    "slug": {
+      "type": "string",
+      "title": "URL Slug"
+    },
+    "destinationId": {
+      "type": "string",
+      "title": "Destination ID",
+      "description": "Reference to Destination"
+    },
+    "destinationName": {
+      "type": "string",
+      "title": "Destination Name (cached)"
+    },
+    "tagline": {
+      "type": "string",
+      "title": "Short Tagline"
+    },
+    "description": {
+      "type": "string",
+      "title": "Overview Description"
+    },
+    "heroImage": {
+      "type": "string",
+      "title": "Hero Image URL",
+      "format": "url"
+    },
+    "gallery": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Property Gallery Images"
+    },
+    "location": {
+      "type": "string",
+      "title": "Address / Location"
+    },
+    "mapUrl": {
+      "type": "string",
+      "title": "Google Maps Embed URL",
+      "format": "url"
+    },
+    "startingPrice": {
+      "type": "number",
+      "title": "Starting Price (INR)"
+    },
+    "priceFromLabel": {
+      "type": "string",
+      "title": "Price Display Label (optional override)"
+    },
+    "amenities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Amenities"
+    },
+    "mealPlan": {
+      "type": "string",
+      "title": "Meal Plan"
+    },
+    "checkIn": {
+      "type": "string",
+      "title": "Check-in Time"
+    },
+    "checkOut": {
+      "type": "string",
+      "title": "Check-out Time"
+    },
+    "nearbyAttractions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Nearby Attractions"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "title": "Featured on Home"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "hidden"
+      ],
+      "default": "active",
+      "title": "Status"
+    },
+    "seoTitle": {
+      "type": "string",
+      "title": "SEO Title"
+    },
+    "seoDescription": {
+      "type": "string",
+      "title": "SEO Description"
+    }
+  },
+  "required": [
+    "name",
+    "slug",
+    "destinationId"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

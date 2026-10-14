@@ -1,0 +1,82 @@
+{
+  "name": "Enquiry",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "mobile": {
+      "type": "string",
+      "title": "Mobile Number"
+    },
+    "destination": {
+      "type": "string",
+      "title": "Destination"
+    },
+    "property": {
+      "type": "string",
+      "title": "Property"
+    },
+    "checkIn": {
+      "type": "string",
+      "title": "Check-in Date",
+      "format": "date"
+    },
+    "checkOut": {
+      "type": "string",
+      "title": "Check-out Date",
+      "format": "date"
+    },
+    "guests": {
+      "type": "string",
+      "title": "Number of Guests"
+    },
+    "rooms": {
+      "type": "string",
+      "title": "Rooms Required"
+    },
+    "message": {
+      "type": "string",
+      "title": "Message"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "maxLength": 1000
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "New",
+        "Contacted",
+        "Confirmed",
+        "Closed"
+      ],
+      "default": "New",
+      "title": "Status"
+    }
+  },
+  "required": [
+    "name",
+    "mobile"
+  ],
+  "rls": {
+    "create": null,
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

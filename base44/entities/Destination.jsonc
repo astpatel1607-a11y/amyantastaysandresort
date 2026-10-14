@@ -1,0 +1,92 @@
+{
+  "name": "Destination",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Destination Name"
+    },
+    "slug": {
+      "type": "string",
+      "title": "URL Slug"
+    },
+    "tagline": {
+      "type": "string",
+      "title": "Short Tagline"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "heroImage": {
+      "type": "string",
+      "title": "Hero Image URL",
+      "format": "url"
+    },
+    "gallery": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Gallery Images"
+    },
+    "experiences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Experience Highlights"
+    },
+    "nearbyAttractions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Nearby Attractions"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": true,
+      "title": "Featured"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "hidden"
+      ],
+      "default": "active",
+      "title": "Status"
+    },
+    "seoTitle": {
+      "type": "string",
+      "title": "SEO Title"
+    },
+    "seoDescription": {
+      "type": "string",
+      "title": "SEO Description"
+    }
+  },
+  "required": [
+    "name",
+    "slug"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

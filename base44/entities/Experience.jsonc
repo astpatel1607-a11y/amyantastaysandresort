@@ -1,0 +1,77 @@
+{
+  "name": "Experience",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Experience Title"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "category": {
+      "type": "string",
+      "title": "Category"
+    },
+    "destinationId": {
+      "type": "string",
+      "title": "Destination ID"
+    },
+    "destinationName": {
+      "type": "string",
+      "title": "Destination Name (cached)"
+    },
+    "propertyId": {
+      "type": "string",
+      "title": "Related Property ID (optional)"
+    },
+    "propertyName": {
+      "type": "string",
+      "title": "Property Name (cached)"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Experience Images"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "title": "Featured"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "hidden"
+      ],
+      "default": "active",
+      "title": "Status"
+    }
+  },
+  "required": [
+    "title",
+    "destinationId"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

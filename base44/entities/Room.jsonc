@@ -1,0 +1,67 @@
+{
+  "name": "Room",
+  "type": "object",
+  "properties": {
+    "propertyId": {
+      "type": "string",
+      "title": "Property ID",
+      "description": "Reference to Property"
+    },
+    "propertyName": {
+      "type": "string",
+      "title": "Property Name (cached)"
+    },
+    "name": {
+      "type": "string",
+      "title": "Room Name"
+    },
+    "description": {
+      "type": "string",
+      "title": "Room Description"
+    },
+    "occupancy": {
+      "type": "string",
+      "title": "Occupancy"
+    },
+    "price": {
+      "type": "number",
+      "title": "Starting Tariff (INR)"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Room Images"
+    },
+    "facilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Room Facilities"
+    }
+  },
+  "required": [
+    "propertyId",
+    "name"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
